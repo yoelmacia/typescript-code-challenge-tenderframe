@@ -1,0 +1,25 @@
+{
+  "short_name": "Tenderframe App",
+  "name": "Your cloud-based tendering app",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 16x16",      
+      "type": "image/x-icon"
+    },
+    {
+      "src": "tenderframe-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "tenderframe-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }	    
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#30a7c9",
+  "background_color": "#ffffff"
+}
