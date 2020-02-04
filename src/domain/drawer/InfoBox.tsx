@@ -2,6 +2,8 @@ import React, { FC } from 'react'
 
 import { makeStyles } from '@material-ui/core'
 
+import Box from '@material-ui/core/Box'
+
 export interface InfoBoxProps {
 	invert?: boolean
 	marginTop?: number
@@ -22,7 +24,7 @@ const useStyles = makeStyles(() => ({
 const InfoBox: FC<InfoBoxProps> = () => {
 	const classes = useStyles()
 
-	return <div className={classes.infoBox} />
+	return <Box className={classes.infoBox} />
 }
 
 export default InfoBox
