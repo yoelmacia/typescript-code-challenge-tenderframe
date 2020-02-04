@@ -1,0 +1,20 @@
+type Company {
+  name: String @fake(type:companyName)
+  industry: String @examples(values: ["IT", "Manufacturing", "Medicine", "Media"])
+  status: String @examples(values: ["draft", "tendering", "awarded"])
+  employees: [Employee!] @listLength(min: 5, max: 10)
+}
+
+type Employee {
+  firstName: String @fake(type: firstName, locale:en_CA)
+  lastName: String @fake(type: lastName, locale:en_CA)
+  address: String @fake(type:streetAddress, options: { useFullAddress: true })
+  subordinates: [Employee!] @listLength(min: 0, max: 3)
+  company: Company
+}
+
+type Query {
+  employee(id: ID): Employee
+  company(id: ID): Company
+  allCompanies: [Company!]
+}
