@@ -14,7 +14,7 @@ export const themeValues = (): Theme => {
 			},
 		},
 		spacing: factor => factor * 4,
-		mainOverlap: 10,
+		mainOverlap: 0,
 		palette: {
 			blue: {
 				main: '#30a7c9',
