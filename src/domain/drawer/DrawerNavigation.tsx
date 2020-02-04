@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles'
 import { themeValues } from 'app/themes/themeValues'
 import Drawer from './Drawer'
+import Logo from './Logo'
 
 const useStyles = makeStyles((theme: Theme) => ({
 	root: {
@@ -27,6 +28,7 @@ const DrawerNavigation: FC = () => {
 
 	return (
 		<nav className={classes.root}>
+			<Logo />
 			<Drawer
 				className={classes.drawerDesktop}
 				variant="permanent"

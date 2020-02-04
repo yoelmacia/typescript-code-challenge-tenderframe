@@ -22,7 +22,7 @@ const Logo: FC<LogoProps> = () => {
 	return (
 		<Link to="/">
 			<img
-				src="https://placehold.it/100x20"
+				src="/tender-frame-logo.png"
 				className={classes.logo}
 				alt="Logo"
 			/>
