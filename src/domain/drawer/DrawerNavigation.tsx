@@ -5,6 +5,7 @@ import { Theme } from '@material-ui/core/styles'
 import { themeValues } from 'app/themes/themeValues'
 import Drawer from './Drawer'
 import Logo from './Logo'
+import InfoBox from './InfoBox'
 
 const useStyles = makeStyles((theme: Theme) => ({
 	root: {
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 		'& > .MuiPaper-root': {
 			position: 'relative',
 			height: '100%',
+			zIndex: -1,
 			minHeight: '100vh',
 		},
 	},
@@ -36,6 +38,7 @@ const DrawerNavigation: FC = () => {
 					style: { width: themeValues().sizes.Drawer.width },
 				}}
 			/>
+			<InfoBox />
 		</nav>
 	)
 }
