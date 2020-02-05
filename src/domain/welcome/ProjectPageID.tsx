@@ -10,6 +10,8 @@ import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
+import StatusButton from '../../component/StatusButton'
+
 const client = new ApolloClient({
 	link: new HttpLink({ uri: 'http://localhost:9002/graphql' }),
 	cache: new InMemoryCache(),
@@ -34,6 +36,14 @@ const ProjectPageID: FC = ({ children }) => {
 					lastName
 					address
 				}
+			}
+		}
+	`
+
+	const STATUS = gql`
+		query Tabs {
+			allCompanies {
+				status
 			}
 		}
 	`
@@ -102,11 +112,50 @@ const ProjectPageID: FC = ({ children }) => {
 		)
 	}
 
+	const Status = (): any => {
+		const { data, error, loading, refetch } = useQuery(STATUS)
+		if (loading) {
+			return <div>Loading...</div>
+		}
+		if (error) {
+			return <div>Error! {error.message}</div>
+		}
+
+		return (
+			<div>
+				{data &&
+					data.allCompanies.map((company: any, index: number) => (
+						<div key={index}>
+							{index === 0 ? (
+								<div>
+									<h3>Status</h3>
+									<h4>{company.status}</h4>
+									<StatusButton
+										text="+"
+										disabled={false}
+										onClick={() => refetch()}
+									/>
+									<StatusButton
+										text="-"
+										disabled={false}
+										onClick={() => refetch()}
+									/>
+								</div>
+							) : (
+								''
+							)}
+						</div>
+					))}
+			</div>
+		)
+	}
+
 	return (
 		<div className={classes.root}>
 			<Paper className={classes.root}>
 				<ApolloProvider client={client}>
 					<Company />
+					<Status />
 				</ApolloProvider>
 			</Paper>
 			{children}
