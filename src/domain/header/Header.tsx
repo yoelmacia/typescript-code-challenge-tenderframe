@@ -34,8 +34,21 @@ const Header: FC = () => {
 		event: React.ChangeEvent<{}>,
 		newValue: number
 	) => {
+		const url = window.location.href.split('/projects/')[0]
+		const newURL = `${url}/projects/${newValue + 1}`
 		setValue(newValue)
+		window.history.pushState({}, 'Title', newURL)
 	}
+
+	const handleClick: any = () => {
+		window.location.reload()
+	}
+
+	React.useEffect(() => {
+		const url = window.location.href.split('/projects/')[1]
+		const newURL = +url - 1
+		setValue(newURL)
+	}, [])
 
 	return (
 		<div className={classes.root}>
@@ -44,6 +57,7 @@ const Header: FC = () => {
 				className={classes.tabs}
 				value={value}
 				onChange={handleChange}
+				onClick={handleClick}
 				indicatorColor="primary"
 				textColor="primary"
 				centered
