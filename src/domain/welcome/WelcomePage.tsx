@@ -13,7 +13,7 @@ const WelcomePage: FC = ({ children }) => {
 		<div className={classes.root}>
 			<Paper className={classes.root}>
 				<Typography component="p">
-					Please study the README.md for the assignment!
+					Go to <a href="/projects/"> Projects</a>
 				</Typography>
 			</Paper>
 			{children}
