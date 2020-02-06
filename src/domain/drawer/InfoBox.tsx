@@ -12,12 +12,13 @@ export interface InfoBoxProps {
 
 const useStyles = makeStyles(() => ({
 	infoBox: {
-		width: '90%',
+		position: 'absolute',
+		top: '480px',
+		width: '270px',
 		border: '1px solid black',
 		height: '200px',
-		margin: 'auto',
-		position: 'relative',
-		bottom: '290px',
+		marginLeft: '20px',
+		marginRight: '20px',
 	},
 }))
 
