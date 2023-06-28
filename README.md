@@ -1,5 +1,7 @@
 # Spin-up
 
+<img width="1137" alt="Screenshot 2023-06-28 at 10 50 53" src="https://github.com/yoelmacia/typescript-code-challenge-tenderframe/assets/44965890/b40fe5d8-d341-4b0d-9b3b-44f182cc13de">
+
 -   checkout the repo
 -   Spin-up the the app
     -   `cd` to the repo
